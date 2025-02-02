@@ -1,6 +1,7 @@
 package steps;
 
 import driver.BaseTest;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -8,15 +9,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.DoubleHelper;
 import utils.FormHelper;
 
 import java.time.Duration;
+import java.util.HashMap;
 
 public class TransferMoneyPopupSteps {
     private final WebDriverWait webDriverWait;
     private final FormHelper formHelper;
     private final int timeOut = 10;
     private final int sleepTime = 3;
+    private final HashMap<String, Object> localDataStore = new HashMap<String, Object>();
 
     public TransferMoneyPopupSteps() {
         this.webDriverWait = new WebDriverWait(BaseTest.getWebDriver(), Duration.ofSeconds(timeOut), Duration.ofSeconds(sleepTime));
@@ -28,9 +32,8 @@ public class TransferMoneyPopupSteps {
     private final By byReceiverAccountSelect = By.xpath("//body/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[7]/select[1]");
     private final By byAmountInput = By.xpath("//body/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[11]/input[1]");
     private final By bySendButton = By.xpath("//body/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[13]/div[1]");
+    private final By byAccountAmount = By.xpath("//div[div[text()='Amount']]/div/div[1]");
 
-
-    /*farklı stepte olmalı*/
     @Then("The transfer money popup title should be {string}")
     public void theTransferMoneyPopupTitleShouldBe(String expectedTitle) {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(byPopupTitle));
@@ -78,5 +81,4 @@ public class TransferMoneyPopupSteps {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(bySendButton));
         formHelper.findElement(bySendButton).click();
     }
-
 }

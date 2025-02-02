@@ -69,6 +69,7 @@ public class BaseTest {
             chromeOptions.addArguments("disable-translate");
             chromeOptions.addArguments("--disable-notifications");
             chromeOptions.addArguments("--start-fullscreen");
+            chromeOptions.addArguments("--headless=new");
             chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 
             Map<String, Object> prefs = new HashMap<>();

@@ -80,7 +80,6 @@ public class AddMoneyPopupSteps {
     public void theAddButtonShouldBeDisabled(String buttonText) {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(byAddButton));
         WebElement addButton = formHelper.findElement(byAddButton);
-        // Örnekte aria-disabled attribute kullanılıyor
         String ariaDisabled = addButton.getAttribute("aria-disabled");
         Assert.assertTrue(buttonText + " button is not disabled", "true".equals(ariaDisabled));
     }
@@ -110,7 +109,6 @@ public class AddMoneyPopupSteps {
         WebElement inputField = formHelper.findElement(locator);
         inputField.clear();
         inputField.sendKeys(inputText);
-        // Eğer validasyon için blur (odak kaybı) tetiklenmesi gerekiyorsa ek bir click veya JavaScript tetiklenebilir.
     }
 
     @Then("An error message {string} should be displayed for {string} field")

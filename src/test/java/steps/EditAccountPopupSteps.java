@@ -20,8 +20,6 @@ public class EditAccountPopupSteps {
         this.wait = new WebDriverWait(BaseTest.getWebDriver(), Duration.ofSeconds(timeOut));
         this.formHelper = new FormHelper(BaseTest.getWebDriver());
     }
-
-    // Locator'lar
     private final By byPopupTitle = By.xpath("//body/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]");
     private final By byAccountNameInput = By.xpath("//body/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/input[1]");
     private final By byUpdateButton = By.xpath("//div[contains(text(),'UPDATE')]");
@@ -52,7 +50,6 @@ public class EditAccountPopupSteps {
         }
     }
 
-    // --- Account Name Field Steps ---
     @When("User clears the account name input field")
     public void userClearsTheAccountNameInputField() {
         WebElement input = formHelper.findElement(byAccountNameInput);
