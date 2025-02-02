@@ -3,6 +3,7 @@ Feature: LoginPage Scenario
   Background:
     Given Go to catchylabs
 
+  @smoke
   Scenario: Success login
     When Enter the username
     And  Enter the password

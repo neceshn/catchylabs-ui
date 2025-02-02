@@ -10,11 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.DoubleHelper;
 import utils.FormHelper;
-
 import java.time.Duration;
 import java.util.HashMap;
-
-import static java.lang.Double.parseDouble;
 
 public class AddMoneyPopupSteps {
     private final WebDriverWait webDriverWait;
@@ -28,7 +25,6 @@ public class AddMoneyPopupSteps {
         this.formHelper = new FormHelper(BaseTest.getWebDriver());
     }
 
-    // Locator'lar
     private final By byPopupTitle = By.xpath("//body/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]");
     private final By byCardNumberInput = By.xpath("//body/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/input[1]");
     private final By byCardHolderInput = By.xpath("//body/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/input[1]");
@@ -38,10 +34,6 @@ public class AddMoneyPopupSteps {
     private final By byAddButton = By.xpath("//body/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[10]");
     private final By byAccountAmount = By.xpath("//div[div[text()='Amount']]/div/div[1]");
 
-    /**
-     * Bu metod, verilen alan etiketine ait validasyon mesajı elementini döndürür.
-     * (Popup'taki yapıya göre, input'un altındaki <div> elementinde validasyon mesajı varsayılmıştır.)
-     */
     private By getErrorMessageLocator(String fieldLabel) {
         formHelper.findElement(By.cssSelector("body")).click();
         return By.xpath("//div[contains(text(),'" + fieldLabel + "')]");

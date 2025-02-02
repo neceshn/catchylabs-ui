@@ -113,9 +113,11 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M7</version>
                 <configuration>
+
                     <!-- Test olarak çalıştırılacak sınıfların desenini belirtiyoruz -->
                     <includes>
-                        <include>**/*Runner.java</include>
+                        <include>**/CucumberRunner.java</include>
+<!--                        <include>**/CucumberSmokeRunner.java</include>-->
                     </includes>
                 </configuration>
             </plugin>

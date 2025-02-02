@@ -32,12 +32,10 @@ public class CreateAccountPopupSteps {
     private final By byButtonCreateAccount = By.cssSelector("div.r-1p0dtai.r-1d2f490.r-1xcajam.r-zchlnj.r-ipm5af.r-sfbmgh.r-1ielgck.r-1uypc71.r-xx3c9p.r-6dt33c div.css-175oi2r:nth-child(2) div.css-175oi2r.r-1p0dtai.r-1d2f490.r-1xcajam.r-zchlnj.r-ipm5af.r-1niwhzg div.css-175oi2r.r-13awgt0.r-ipm5af div.css-175oi2r.r-1awozwy.r-13awgt0.r-1777fci.r-1ygmrgt div.css-175oi2r.r-1awozwy.r-14lw9ot.r-1xfd6ze.r-1rr9as1.r-129l8ac.r-1ik5qf4.r-e7q0ms div.css-175oi2r.r-1awozwy.r-13awgt0.r-1777fci.r-nsbfu8.r-13qz1uu:nth-child(2) div.css-175oi2r.r-150rngu.r-eqz5dr.r-16y2uox.r-1wbh5a2.r-11yh6sk.r-1rnoaur.r-agouwx.r-1pi2tsx.r-13qz1uu div.css-175oi2r div.css-175oi2r.r-1i6wzkk.r-lrvibr.r-1loqt21.r-1otgn73.r-1awozwy.r-169ebfh.r-z2wwpe.r-h3s6tt.r-1777fci.r-tsynxw.r-13qz1uu:nth-child(9) > div.css-146c3p1.r-jwli3a.r-1b43r93");
 
 
-
     @When("User Select Account Type {string}")
     public void userSelectAccountType(String optionText) {
         _formHelper.selectOptionByVisibleText(bySelectAccountType, optionText);
     }
-
 
     @Then("System Open The Popup {string}")
     public void systemOpenThePopup(String popupTitle) {

@@ -58,6 +58,7 @@ Feature: Add Money Popup
     When User enters "ten dollars" into "Amount" field
     Then An error message "Invalid amount" should be displayed for "Amount" field
 
+  @smoke
   Scenario: Successful Add Money Operation
     When User enters "4111111111111111" into "Card number" field
     And User enters "Ece Şahin" into "Card holder" field

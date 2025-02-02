@@ -29,6 +29,7 @@ Feature: Edit Account Popup Validation
     When User enters "NewEceAccount" field
     And The "UPDATE" button should be enabled
 
+  @smoke
   Scenario: Save Edited Account with Valid Data
     When User enters "UpdatedAccount" field
     And User clicks on "UPDATE" button

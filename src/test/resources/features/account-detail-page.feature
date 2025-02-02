@@ -8,6 +8,7 @@ Feature: Account Details Page
     Then The title will contains the "apps"
     When Click "OPEN MONEY TRANSFER" button
 
+  @smoke
   Scenario: Open My Account Screen
     Then The my account screen is displayed
 

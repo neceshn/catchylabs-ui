@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.FormHelper;
 
 import java.time.Duration;
-import java.util.List;
 
 public class EditAccountPopupSteps {
 
@@ -69,16 +68,7 @@ public class EditAccountPopupSteps {
 
     @When("User moves focus away from the account name input field")
     public void userMovesFocusAwayFromTheAccountNameInputField() {
-        // Örneğin, body elementine tıklayarak odak kaybı (blur) tetiklenebilir.
         formHelper.findElement(By.tagName("body")).click();
     }
-    // --- Save Operation ---
-//    @When("User clicks on {string} button")
-//    public void userClicksOnButton(String buttonText) {
-//        // Bu method, butonun metnine göre locator üretir. Biz save butonunu burada da kullanabiliriz.
-//        wait.until(ExpectedConditions.elementToBeClickable(byUpdateButton));
-//        formHelper.findElement(byUpdateButton).click();
-//    }
-
 
 }

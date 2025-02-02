@@ -16,6 +16,7 @@ Feature: Transfer Money Popup Feature
     And The amount input field should be displayed
     And The "Send" button should be disabled
 
+  @smoke
   Scenario: Transfer Money
     When Store Amount
     And User clicks on "Transfer money" button

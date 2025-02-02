@@ -43,24 +43,17 @@ public class BaseTest {
     public void setUp() {
         logger.info("************************************  BeforeScenario  ************************************");
 
-        // Tarayıcı bilgisi sistem parametresinden alınıyor, belirtilmemişse varsayılan olarak Chrome kullanılıyor.
         browserName = System.getProperty("browser");
         if (browserName == null || browserName.trim().isEmpty()) {
             browserName = "chrome";
         }
 
         if (browserName.equalsIgnoreCase("chrome")) {
-            // Mobil emülasyon ayarlarını yapılandırma (örneğin, iPhone X)
-            Map<String, String> mobileEmulation = new HashMap<>();
-            mobileEmulation.put("deviceName", "iPhone X");
-
-            //
             WebDriverManager.chromedriver().setup();
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("disable-translate");
             chromeOptions.addArguments("--disable-notifications");
             chromeOptions.addArguments("--start-fullscreen");
-            chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 
             Map<String, Object> prefs = new HashMap<>();
             chromeOptions.setExperimentalOption("prefs", prefs);
@@ -68,11 +61,9 @@ public class BaseTest {
             driver = new ChromeDriver(chromeOptions);
 
         } else if (browserName.equalsIgnoreCase("mobile")) {
-            // Mobil emülasyon ayarlarını yapılandırma (örneğin, iPhone X)
             Map<String, String> mobileEmulation = new HashMap<>();
             mobileEmulation.put("deviceName", "iPhone X");
 
-            //
             WebDriverManager.chromedriver().setup();
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("disable-translate");
@@ -118,8 +109,6 @@ public class BaseTest {
             }
             driver.quit();
         }
-
-        // Raporu dosyaya yaz (flush)
         if (extent != null) {
             extent.flush();
         }

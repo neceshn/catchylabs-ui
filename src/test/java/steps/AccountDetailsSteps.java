@@ -83,7 +83,7 @@ public class AccountDetailsSteps {
     public void theTransferMoneyScreenIsDisplayed() {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(byTransferMoneyTitle));
         String actualTitle = formHelper.findElement(byTransferMoneyTitle).getText();
-        Assert.assertEquals("Transfer Money popup does not open", "Transfer Money", actualTitle);
+        Assert.assertEquals("Transfer Money popup does not open", "Transfer money", actualTitle);
     }
 
     @Then("The add money screen is displayed")
